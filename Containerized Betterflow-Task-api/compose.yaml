@@ -1,0 +1,26 @@
+services:
+  api:
+    container_name: betterflowapis
+    build: .
+    volumes:
+      - .:/var/www/html
+    ports:
+      - 9009:80
+  mysqldbapis:
+    image: mysql:8.0.34
+    container_name: mysqldbapis
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: betterflowdb
+      MYSQL_USER: betterflow
+      MYSQL_PASSWORD: betterflowpassword
+
+  phpmyadminapis:
+    image: phpmyadmin:latest
+    container_name: phpmyadminapis
+    ports:
+      - "9008:80"
+    environment:
+      PMA_ARBITRARY: 1
+      PMA_HOST: mysqldbapis
+      PMA_PORT: 3306

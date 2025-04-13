@@ -14,7 +14,7 @@ class TaskApiTest extends TestCase
     private function withApiKey(array $headers = [])
     {
         return array_merge($headers, [
-            'API_KEY' => env('API_KEY'), // Dynamically load from .env
+            'X-API-KEY' => env('API_KEY'), // Dynamically load from .env
         ]);
     }
 

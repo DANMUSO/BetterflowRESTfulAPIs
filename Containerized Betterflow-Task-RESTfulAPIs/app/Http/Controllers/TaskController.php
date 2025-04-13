@@ -30,7 +30,7 @@ class TaskController extends Controller
             $query->orderBy($sortBy, $sortOrder);
 
             // Pagination (if needed, or use ->get() for all)
-            $tasks = $query->paginate(10);
+            $tasks = $query->paginate(100);
             if ($tasks->isEmpty()) {
                 return response()->json([
                     'message' => 'No data found.'

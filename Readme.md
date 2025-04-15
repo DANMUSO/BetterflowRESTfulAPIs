@@ -14,9 +14,9 @@ Laravel CLI
 <br>
 ## Database Migrations
 
-The following database migrations are included:
+The following database migration is included:
 
-2025_04_12_040920_create_tasks_table.php - Creates the tasks table with fields for task management
+database/migrations/2025_04_12_040920_create_tasks_table.php - Creates the tasks table with fields for task management
 ### ⚙️ Steps to Run:
 cd Betterflow-Task-RESTfulAPIs<br>
 composer install<br>

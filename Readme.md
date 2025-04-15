@@ -49,7 +49,7 @@ exit<br>
 All requests must include a valid API key in the headers:
 <br>
 ✅ Example Header:<br>
-Authorization: X-API-KEY your_api_key_here<br>
+Authorization: X-API-KEY=your_api_key_here<br>
 API key already defined in the .env: <br>
 
 API_KEY=your_api_key_here <br>

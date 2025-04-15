@@ -4,13 +4,13 @@ This repository contains two Laravel-based RESTful APIs for managing tasks, buil
 ### 🔹1. Betterflow-Task-RESTfulAPIs (Standard Laravel App)
 ✅ Requirements:
 PHP >= 8.1
-
+<br>
 Composer
-
+<br>
 MySQL / SQLite
-
+<br>
 Laravel CLI
-
+<br>
 ### ⚙️ Steps to Run:
 cd Betterflow-Task-RESTfulAPIs
 composer install

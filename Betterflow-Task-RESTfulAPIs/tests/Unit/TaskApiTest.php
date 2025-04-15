@@ -21,7 +21,7 @@ class TaskApiTest extends TestCase
 
             $response = $this->postJson('/api/tasks', $payload);
 
-            $response->assertStatus(200)
+            $response->assertStatus(201)
                 ->assertJsonFragment([
                     'title' => 'Test Task',
                     'priority' => 'high',

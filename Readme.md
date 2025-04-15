@@ -12,6 +12,11 @@ MySQL / SQLite
 <br>
 Laravel CLI
 <br>
+## Database Migrations
+
+The following database migrations are included:
+
+2025_04_12_040920_create_tasks_table.php - Creates the tasks table with fields for task management
 ### ⚙️ Steps to Run:
 cd Betterflow-Task-RESTfulAPIs<br>
 composer install<br>

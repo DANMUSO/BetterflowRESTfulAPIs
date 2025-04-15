@@ -3,6 +3,7 @@ This repository contains two Laravel-based RESTful APIs for managing tasks, buil
 ## Setup Instructions
 ### 🔹1. Betterflow-Task-RESTfulAPIs (Standard Laravel App)
 ✅ Requirements:
+<br>
 PHP >= 8.1
 <br>
 Composer
@@ -12,60 +13,61 @@ MySQL / SQLite
 Laravel CLI
 <br>
 ### ⚙️ Steps to Run:
-cd Betterflow-Task-RESTfulAPIs
-composer install
-cp .env.example .env
-php artisan key:generate
-php artisan migrate
-php artisan serve
+cd Betterflow-Task-RESTfulAPIs<br>
+composer install<br>
+cp .env.example .env<br>
+php artisan key:generate<br>
+php artisan migrate<br>
+php artisan serve<br>
 The API will be available at: http://127.0.0.1:8000
-
+<br>
 ### 🔹 2. Containerized Betterflow-Task-RESTfulAPIs (Dockerized with API-KEY Middleware)
-✅ Requirements:
-Docker
+✅ Requirements:<br>
+Docker<br>
 
-Docker Compose
+Docker Compose<br>
 
-### ⚙️ Steps to Run:
-cd "Containerized Betterflow-Task-RESTfulAPIs"
-docker-compose up -d --build
-Then run the Laravel setup inside the container:
-
-docker exec -it container_id bash
-composer install
-cp .env.example .env
-php artisan key:generate
-php artisan migrate
-exit
+### ⚙️ Steps to Run:<br>
+cd "Containerized Betterflow-Task-RESTfulAPIs"<br>
+docker-compose up -d --build<br>
+Then run the Laravel setup inside the container:<br>
+<br>
+docker exec -it container_id bash<br>
+composer install<br>
+cp .env.example .env <br>
+php artisan key:generate<br>
+php artisan migrate<br>
+exit<br>
 ### The API will be available at: http://localhost:9009
 
-## 🔐 API-KEY (Only for Dockerized API)
+## 🔐 API-KEY (Only for Dockerized API) <br>
 All requests must include a valid API key in the headers:
+<br>
+✅ Example Header:<br>
+Authorization: X-API-KEY your_api_key_here<br>
+API key already defined in the .env: <br>
 
-✅ Example Header:
-Authorization: X-API-KEY your_api_key_here
-API key already defined in the .env:
+API_KEY=your_api_key_here <br>
+Middleware checks the key in every request to ensure secure access. <br>
 
-API_KEY=your_api_key_here
-Middleware checks the key in every request to ensure secure access.
+📌 Example Endpoints (for both apps) <br>
 
-📌 Example Endpoints (for both apps)
+## Method	URL	Description <br>
+GET	/api/tasks	Get all tasks <br>
+POST	/api/tasks	Create a new task <br>
+GET	/api/tasks/{id}	Retrieve a task <br>
+PUT	/api/tasks/{id}	Update a task <br>
+DELETE	/api/tasks/{id}	Soft delete a task <br>
+For the containerized version, include the API key with every request. <br>
 
-## Method	URL	Description
-GET	/api/tasks	Get all tasks
-POST	/api/tasks	Create a new task
-GET	/api/tasks/{id}	Retrieve a task
-PUT	/api/tasks/{id}	Update a task
-DELETE	/api/tasks/{id}	Soft delete a task
-For the containerized version, include the API key with every request.
+### 🧪 Running Unit Tests  
+<be>
+Inside either project directory:<br>
 
-### 🧪 Running Unit Tests
-Inside either project directory:
+php artisan test Or inside Docker:<br>
 
-php artisan test Or inside Docker:
-
-docker exec -it container_id  bash
-php artisan test
+docker exec -it container_id  bash <br>
+php artisan test<br>
 
 ## ✅ Best Practices Used
 ### ✅ Clean, modular controller logic
